@@ -7,11 +7,11 @@ import {NextResponse} from "next/server";
 export async function POST(req:Request){
     try{
         //get data from frontend
-        const {name,email,password} = await req.json();
+        const {username,email,password} = await req.json();
 
         // console.log("Data:",name,email);
         //Basic Validation
-        if(!name||!email||!password){
+        if(!username||!email||!password){
            return NextResponse.json(
             {error:"All fields are required"},
             {status: 400}
@@ -34,7 +34,7 @@ export async function POST(req:Request){
 
         const user = await prisma.user.create({
             data:{
-                name,
+                username,
                 email,
                 password:hashedPassword,
             },

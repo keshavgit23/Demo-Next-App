@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";  //useState componenet ke ander data ko yaad rakhne wur update hone per UI ko dobara render karne ka kaam aata hai
+import { useState } from "react";  //useState componenet ke ander data ko yaad rakhne aur update hone per UI ko dobara render karne ka kaam aata hai
 import Button from "../components/Button";
 
- export default function RegisterPage() {  // syntax of useState:-
-                                            //const[state,setState]=useState(initialValue);
-  const [name, setName] = useState("");
+export default function RegisterPage() {  // syntax of useState:-
+  //const[state,setState]=useState(initialValue);
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -22,12 +22,12 @@ import Button from "../components/Button";
         method: "POST",
         headers: {
           "Content-Type": "application/json",  //await paauses excecution of an async function until the Promise resolves
-                                                //await always comes under async function
-                                                // async function myFunc(){
-                                                //   await spmeasyncTask();
-                                                // }
+          //await always comes under async function
+          // async function myFunc(){
+          //   await someasyncTask();
+          // }
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ username, email, password }),
       });
 
       const data = await res.json();
@@ -35,8 +35,8 @@ import Button from "../components/Button";
       if (!res.ok) {
         setMessage(data.error || "Something went wrong");
       } else {
-        setMessage("Registration Successful");
-        setName("");
+        setMessage("Registration Successful!");
+        setUsername("");
         setEmail("");
         setPassword("");
       }
@@ -58,11 +58,11 @@ import Button from "../components/Button";
         <label className="font-medium">Username:</label>
         <input
           type="text"
-          value={name}
+          value={username}
           placeholder="Enter your username"
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
           required
-          className="border border-gray-300 mb-2 w-full rounded-lg p-2"
+          className="border border-gray-300 mb-2 w-full rounded-lg p-2 focus:outline-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
         />
 
         <label className="font-medium">Email:</label>
@@ -72,7 +72,7 @@ import Button from "../components/Button";
           placeholder="Enter your email"
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="border border-gray-300 mb-2 w-full rounded-lg p-2"
+          className="border border-gray-300 mb-2 w-full rounded-lg p-2 focus:outline-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
         />
 
         <label className="font-medium">Password:</label>
@@ -82,7 +82,7 @@ import Button from "../components/Button";
           placeholder="Enter your password"
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="border border-gray-300 mb-2 w-full rounded-lg p-2"
+          className="border border-gray-300 mb-2 w-full rounded-lg p-2 focus:outline-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
         />
 
         <div className="flex justify-center mt-4">

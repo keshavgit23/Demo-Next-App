@@ -1,31 +1,84 @@
+"use client";
 
-
+import { useState } from "react";
 import Button from "../components/Button";
 
 export default function LoginPage() {
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [message, setMessage] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    async function handleSubmit(e: React.FormEvent) {
+
+        e.preventDefault();
+        setLoading(true);
+        setMessage("");
+
+        try {
+            const res = await fetch("/api/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application-json",
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const data = await res.json();
+            if (!res.ok) {
+                setMessage(data.error || "Something went wwrong! ");
+            } else {
+                setMessage("Login succesfull");
+                setUsername("");
+                setPassword("");
+            }
+        } catch (err) {
+            setMessage("Server Error!");
+        } finally {
+            setLoading(false);
+        }
+    }
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
 
-            <div className="bg-white shadow-2xl shadow-blue-500 p-8 rounded-xl w-full max-w-sm">
+            <form
+                onSubmit={handleSubmit}
+                className="bg-white shadow-2xl shadow-blue-500 p-8 rounded-xl w-full max-w-sm space-y-4">
 
-                <div className="flex flex-col mb-4"></div>
+                <h1 className="text-2xl font-semibold text-center mb-4 ">Login Form</h1>
 
-                <div>
-                    <h1 className="text-2xl font-semibold text-center mb-6">Login Form</h1>
+                <div className="flex flex-col">
+                    <label htmlFor="username" className="font-medium block">Username:</label>
+                    <input
+                        type="text"
+                        id="username"
+                        value={username}
+                        placeholder="Enter your username"
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                        className="border border-gray-300  w-full rounded-lg p-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"></input>
                 </div>
                 <div>
-                    <label htmlFor="email" className="mb-1 font-medium mt-4 mr-10 ml-6">Email:</label>
-                    <input type="email" id="email" placeholder="Enter your email" required className="border border-gray-300 mx-4 my-1 ml-6 w-64 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></input>
+                    <label htmlFor="password" className="font-medium">Password:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        className="border border-gray-300 w-full rounded-lg p-2 focus:outline-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"></input>
                 </div>
-                <div className="flex flex-col mt-4"></div>
-                <div>
-                    <label htmlFor="password" className="mb-1 font-medium mt-4 mr-10 ml-6">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required className="border border-gray-300 mx-4 my-1 ml-6 w-64 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></input>
+                <div className="flex justify-center space-x-4">
+                    <Button text={loading ? "Login..." : "Login"} type="submit"></Button>
                 </div>
-                <div className="flex justify-center mt-6 py-3 text-lg">
-                    <Button text="Login" />
-                </div>
-            </div>
+
+                {message && (
+                    <p className="text-center mt-3 text-red-500">{message}</p>
+                )}
+
+            </form>
         </div>
     );
 }
