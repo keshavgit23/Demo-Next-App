@@ -2,6 +2,7 @@
 
 import { useState } from "react";  //useState componenet ke ander data ko yaad rakhne aur update hone per UI ko dobara render karne ka kaam aata hai
 import Button from "../components/Button";
+import {useRouter} from "next/navigation"; //For Registration -> Login 
 
 export default function RegisterPage() {  // syntax of useState:-
   //const[state,setState]=useState(initialValue);
@@ -10,6 +11,7 @@ export default function RegisterPage() {  // syntax of useState:-
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+   const router = useRouter();  // Initialize Router
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -39,6 +41,8 @@ export default function RegisterPage() {  // syntax of useState:-
         setUsername("");
         setEmail("");
         setPassword("");
+
+        router.push("/login");
       }
     } catch (err) {
       setMessage("Server error");
