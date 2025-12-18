@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "../components/Button";
+import {useRouter} from "next/navigation";
 
 export default function LoginPage() {
 
@@ -9,6 +10,7 @@ export default function LoginPage() {
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
     async function handleSubmit(e: React.FormEvent) {
 
@@ -29,9 +31,10 @@ export default function LoginPage() {
             if (!res.ok) {
                 setMessage(data.error || "Something went wwrong! ");
             } else {
-                setMessage("Login succesfull");
+                setMessage("Login successful!");
                 setUsername("");
                 setPassword("");
+                router.push("/admin");
             }
         } catch (err) {
             setMessage("Server Error!");

@@ -5,7 +5,7 @@ import Button from "../components/Button";
 import {useRouter} from "next/navigation"; //For Registration -> Login 
 
 export default function RegisterPage() {  // syntax of useState:-
-  //const[state,setState]=useState(initialValue);
+                                           //const[state,setState]=useState(initialValue);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
