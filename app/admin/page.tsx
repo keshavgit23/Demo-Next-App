@@ -6,29 +6,74 @@ export default function AdminPage() {
 
         <div>
             <div>
-                <nav className="border border-blue-700 w-full">
+                <nav className="border border-blue-700 w-full ">
                     <h1 className="font-bold text-xl p-2">Admin Page</h1>
                 </nav>
             </div>
-            <div className="flex justify-evenly relative right-8">
-                <div className="border border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg">
-                    <h1 className="text-xl font-medium mt-5">Active Users</h1>
+            <div className="flex justify-evenly relative right-8 rounded-3xl group p-6">
+                <div className="border-4 border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg  bg-white p-4 hover:bg-blue-100 tansition">
+                    <h1 className="text-xl font-semibold mt-5">Total Users</h1>
                     <p className="mt-20 absolute text-xl">120</p>
                 </div>
 
-                <div className="border border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg">
-                    <h1 className="text-xl font-medium mt-5">Daily Active Users</h1>
+                <div className="border-4 border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg p-4 bg-white hover:bg-blue-100 tansition">
+                    <h1 className="text-xl font-semibold mt-5">Total Orders</h1>
                     <p className="mt-20 absolute text-xl">500+</p>
                 </div>
-                <div className="border border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg">
-                    <h1 className="text-xl font-medium mt-5">Weekly Active Users</h1>
+                <div className="border-4 border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg p-4 bg-white hover:bg-blue-100 tansition">
+                    <h1 className="text-xl font-semibold mt-5">Revenue</h1>
                     <p className="mt-20 absolute text-xl">10000+</p>
                 </div>
-                <div className="border border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg">
-                    <h1 className="text-xl font-medium mt-5">Monthly Active Users</h1>
+                <div className="border-4 border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg p-4 bg-white hover:bg-blue-100 tansition">
+                    <h1 className="text-xl font-semibold mt-5">Pending/Reports</h1>
                     <p className="mt-20 absolute text-xl">15000+</p>
                 </div>
 
+            </div>
+
+            <div className="flex justify-center relative top-50 mt-6 overflow-y-auto bg-white rounded-lg shadow">
+                <table className="w-full border-collapse">
+                    <thead className="bg-blue-200 rounded-lg">
+                        <tr>
+                            <th className="text-xl font-semibold text-black-600 border-b">Recent Users</th>
+                            <th className="text-xl font-semibold text-black-500 border-b">Latest Orders</th>
+                            <th className="text-xl font-semibold text-black-500 border-b">Order Status</th>
+                            <th className="text-xl font-semibold text-black-500 border-b">Payment Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className="bg-white hover:bg-sky-50">
+                            <td className="px-5 py-10 text-center">Pawan Singh</td>
+                            <td className="px-5 py-10 text-center">Website Design</td>
+                            <td className="px-5 py-10 text-center">Completed</td>
+                            <td className="px-5 py-10 text-center">UPI</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-sky-50">
+                            <td className="px-5 py-10 text-center">Vishal More</td>
+                            <td className="px-5 py-10 text-center">Banner Design</td>
+                            <td className="px-5 py-10 text-center">Waiting</td>
+                            <td className="px-5 py-10 text-center">UPI</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-sky-50">
+                            <td className="px-5 py-10 text-center">Kartik Tripathi</td>
+                            <td className="px-5 py-10 text-center">Youtube Thumnail</td>
+                            <td className="px-5 py-10 text-center">Completed</td>
+                            <td className="px-5 py-10 text-center">UPI</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-sky-50" >
+                            <td className="px-5 py-10 text-center">Karan Pawar</td>
+                            <td className="px-5 py-10 text-center">Instagram Post</td>
+                            <td className="px-5 py-10 text-center">Pending</td>
+                            <td className="px-5 py-10 text-center">Cash</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-sky-50">
+                            <td className="px-5 py-10 text-center">Madhav Chadda</td>
+                            <td className="px-5 py-10 text-center">Website Design</td>
+                            <td className="px-5 py-10 text-center">Completed</td>
+                            <td className="px-5 py-10 text-center">UPI</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     );
