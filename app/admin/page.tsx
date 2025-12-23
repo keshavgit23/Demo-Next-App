@@ -1,21 +1,16 @@
 // import {useRouter} from "next/navigation";
+import AdminNavbar from "../components/AdminNavbar";
 
 export default function AdminPage() {
 
     return (
 
+        <>
+        <AdminNavbar/>
         <div>
-            <nav className="border border-blue-700 w-full bg-blue-500 h-14 flex items-center">
-                <h1 className="font-bold text-xl p-2">Admin Page</h1>
-
-                <div className="flex flex-row ml-100 p-2">
-                    <label htmlFor="text" className="font-semibold p-2">Search</label>
-                    <input type="text" placeholder="Search here..." className="border-1 border-white-300 rounded-lg w-67 p-2 focus:border-white-500 focus:ring-2 focus:ring-white-500 focus:outline-none" />
-                </div>
-            </nav>
             <div className="flex justify-evenly relative right-8 rounded-3xl group p-6">
                 <div className="border-4 border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg  bg-white p-4 hover:bg-blue-100 tansition">
-                    <h1 className="text-xl font-semibold mt-5">Total Users</h1>
+                    <h1 className="text-xl font-semibold mt-5">Total Sales</h1>
                     <p className="mt-20 absolute text-xl">10000</p>
                 </div>
 
@@ -25,7 +20,7 @@ export default function AdminPage() {
                 </div>
                 <div className="border-4 border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg p-4 bg-white hover:bg-blue-100 tansition">
                     <h1 className="text-xl font-semibold mt-5">Revenue</h1>
-                    <p className="mt-20 absolute text-xl">10000+ Rs</p>
+                    <p className="mt-20 absolute text-xl">10000+ rs</p>
                 </div>
                 <div className="border-4 border-blue-500 w-70 h-50 flex justify-center relative top-30 left-10 rounded-lg p-4 bg-white hover:bg-blue-100 tansition">
                     <h1 className="text-xl font-semibold mt-5">Pending/Reports</h1>
@@ -93,7 +88,7 @@ export default function AdminPage() {
                         <div className="bg-blue-500 h-2 rounded-full w-[30%]"></div>
                         <div className="flex justify-between mb-1">
                             <span className="font-medium text-sm">New York</span>
-                            <span className="font-medium text-smm">45%</span>
+                            <span className="font-medium text-sm">45%</span>
                         </div>
                         <div className="bg-blue-500 h-2 rounded-full w-[45%]"></div>
                         <div className="flex justify-between mb-1">
@@ -103,8 +98,54 @@ export default function AdminPage() {
                         <div className="bg-blue-500 h-2 rounded-full w-[80%]"></div>
                     </div>
                 </div>
+
+                <div className="border border-black-500 w-70 h-92 ml-4 rounded-lg p-2 shadow-xl">
+                    <h3 className="bg-blue-200 text-xl font-semibold text-center rounded-lg">Total Sales</h3>
+                    <div className="w-full mt-3">
+                        <div className="flex justify-between mb-1">
+                            <ul className="">
+                                <span className="font-medium text-sm">
+                                    <li>Direct</li></span>
+                                <span className="text-sm font-medium">
+                                    <li>4000/-</li>
+                                </span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="flex justify-between mb-1">
+                        <ul>
+                            <span className="font-medium text-sm">
+                                <li>Affiliate</li>
+                            </span>
+                            <span className="text-sm font-medium">
+                                <li>3000/-</li>
+                            </span>
+                        </ul>
+                    </div>
+                    <div className="flex justify-between mb-1">
+                        <ul>
+                            <span className="font-medium text-sm">
+                                <li>Sponsored</li>
+                            </span>
+                            <span className="font-medium text-sm">
+                                <li>2000/-</li>
+                            </span>
+                        </ul>
+                    </div>
+                    <div className="flex justify-between mb-1">
+                        <ul>
+                            <span className="font-medium text-sm">
+                                <li>E-mail</li>
+                            </span>
+                            <span className="font-medium text-sm">
+                                <li>1000/-</li>
+                            </span>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
+        </div> 
+        </>
     );
 }
 
