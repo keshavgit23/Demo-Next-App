@@ -1,7 +1,7 @@
 export default function AdminNavbar() {
     return (
 
-         <nav className="border border-blue-700 w-full bg-blue-500 h-14 flex items-center">
+         <nav className="border border-blue-10 w-full bg-blue-500 h-14 flex items-center">
                 <h1 className="font-bold text-xl p-2">Admin Page</h1>
 
                 <div className="flex flex-row ml-100 p-2">
