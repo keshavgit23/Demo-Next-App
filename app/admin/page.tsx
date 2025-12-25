@@ -1,6 +1,7 @@
 // import {useRouter} from "next/navigation";
 import AdminNavbar from "../components/AdminNavbar";
 import SmallCard from "../components/SmallCard";
+import AdminFooter from "../components/AdminFooter"; 
 
 export default function AdminPage() {
 
@@ -11,9 +12,9 @@ export default function AdminPage() {
             <SmallCard />
             <div>
 
-                <div className="flex justify-start mt-40 overflow-y-auto bg-white rounded-lg shadow">
-                    <table className=" w-180 border-collapse border border-2-grey ml-22">
-                        <thead className="bg-blue-200 rounded-lg">
+                <div className="flex justify-start mt-20 mb-10 overflow-y-auto bg-white rounded-lg shadow">
+                    <table className="w-180 border-collapse border border-2-grey ml-22 rounded-lg">
+                        <thead className="bg-blue-200">
                             <tr>
                                 <th className="text-xl font-semibold text-black-600 border-b">Recent Users</th>
                                 <th className="text-xl font-semibold text-black-500 border-b">Latest Orders</th>
@@ -96,6 +97,7 @@ export default function AdminPage() {
                     </div>
                 </div>
             </div>
+            <AdminFooter/>
         </>
     );
 }
