@@ -1,10 +1,10 @@
 # Demo Next App
 
-A basic **Next.js app** with user registration API using **Prisma** and **PostgreSQL**, built to understand real‑world backend + frontend integration. :contentReference[oaicite:1]{index=1}
+A basic **Next.js app** with user registration API using **Prisma** and **PostgreSQL**, built to understand real‑world backend + frontend integration.
 
 ---
 
-## 🚀 Description
+##  Description
 
 This project demonstrates a full stack Next.js application with:
 
@@ -17,7 +17,7 @@ It’s ideal for learning how to connect frontend and backend in a real‑world 
 
 ---
 
-## 🧠 Features
+##  Features
 
 - User registration API
 - API routing with Next.js
@@ -26,7 +26,7 @@ It’s ideal for learning how to connect frontend and backend in a real‑world 
 
 ---
 
-## 📦 Tech Stack
+##  Tech Stack
 
 | Technology | Used |
 |------------|------|
@@ -36,19 +36,35 @@ It’s ideal for learning how to connect frontend and backend in a real‑world 
 | PostgreSQL | ✅ |
 | TypeScript | ✅ |
 
----
 
-## 📍 Live Demo
-
-🌐 **Live demo:** *(Add your deployed link here, e.g., Vercel/Netlify)*  
-👉 https://your‑demo‑link.vercel.app
-
-*(If you haven’t deployed it yet, you can remove this section or add later.)*
-
----
-
-## 🛠️ How to Run Locally
+##  How to Run Locally
 
 1. Clone the project  
 ```bash
 git clone https://github.com/keshavgit23/Demo‑Next‑App.git
+
+2. Go to the Project Folder
+```bash
+cd Demo‑Next‑App
+
+3. Install Dependencies
+```bash
+npm install
+
+4. Set up your environment variables
+Create a .env file with your database credentials.
+
+5. Run the development server
+```bash
+npm run dev
+
+6. Open in browser
+http://localhost:3000
+
+## Project Structure
+
+/app
+/lib
+/prisma
+/public
+...
