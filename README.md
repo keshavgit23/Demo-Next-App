@@ -28,13 +28,13 @@ It’s ideal for learning how to connect frontend and backend in a real‑world 
 
 ##  Tech Stack
 
-| Technology | Used |
-|------------|------|
-| Next.js | ✅ |
-| React | ✅ |
-| Prisma ORM | ✅ |
-| PostgreSQL | ✅ |
-| TypeScript | ✅ |
+| Technology |
+|------------|
+| Next.js    |
+| React      |
+| Prisma ORM |
+| PostgreSQL |
+| TypeScript |
 
 
 ##  How to Run Locally
@@ -45,18 +45,18 @@ git clone https://github.com/keshavgit23/Demo‑Next‑App.git
 
 2. Go to the Project Folder
 ```bash
-cd Demo‑Next‑App
+'cd` Demo‑Next‑App
 
 3. Install Dependencies
 ```bash
-npm install
+`npm install`
 
 4. Set up your environment variables
 Create a .env file with your database credentials.
 
 5. Run the development server
 ```bash
-npm run dev
+`npm run dev`
 
 6. Open in browser
 http://localhost:3000
