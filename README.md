@@ -39,23 +39,23 @@ It’s ideal for learning how to connect frontend and backend in a real‑world 
 
 ##  How to Run
 
-# 1. Clone the project  
+ 1. Clone the project  
 ```bash
 git clone <https://github.com/keshavgit23/Demo‑Next‑App.git>
 
-# 2. Go to the Project Folder
+2. Go to the Project Folder
  cd Demo‑Next‑App
 
-# 3. Install Dependencies
+3. Install Dependencies
   npm install
 
-# 4. Set up your environment variables
+4. Set up your environment variables
 Create a .env file with your database credentials.
 
-# 5. Run the development server
+5. Run the development server
   npm run dev
 
-# 6. Open in browser
+6. Open in browser
 http://localhost:3000
 
 ## Project Structure
