@@ -1,6 +1,6 @@
 export default function AdminFooter() {
     return (
-        <footer className="w-full bg-blue-600 px-10 py-8">
+        <footer className="w-full bg-blue-600 px-10 py-6">
             <div className=" w-full flex justify-evenly flex-wrap gap-10">
                 <ul className="space-y-1">
                     <li className=" font-semibold text-white">Company</li>
